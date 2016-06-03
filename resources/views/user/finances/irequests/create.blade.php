@@ -6,10 +6,6 @@
     <div class="row">
     @include('partials.user.sidebar')
         <div class="col-md-9">
-            <div class="col-md-12">
-                <span class="h3">Você pode investir usando seu saldo atual (<span class="small text-success">{{ format_money($balance) }}</span>).</span>
-                <a href="{{ route('user.investments.re') }}" class="btn btn-link">Investir usando saldo</a>
-            </div>
             <div class="widget-box">
                 <div class="widget-title">
                     <span class="icon"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span>

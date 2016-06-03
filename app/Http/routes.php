@@ -42,8 +42,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'auth'], function () {
-    Route::get('investments/re', 'FinancesInvestmentsController@re')->name('user.investments.re');
-    Route::post('investments/re', 'FinancesInvestmentsController@postRe');
     Route::resource('investments', 'FinancesInvestmentsController');
     Route::resource('earnings', 'FinancesEarningsController');
     Route::resource('withdrawals', 'FinancesWithdrawalsController');
