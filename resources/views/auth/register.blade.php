@@ -4,6 +4,10 @@
     <form class="clearfix centerform"  role="form" method="POST" action="{{ url('/register') }}">
         {!! csrf_field() !!}
 
+    @if ($referrer !== null)
+        <input type="hidden" name="referred_by" value="{{ $referrer->username }}">
+    @endif
+
         <div class="form-group normal_text">
             <h2 class="title">Global Bet Brasil</h2>
         </div>
@@ -83,6 +87,12 @@
         @endif
         </div>
 
+    @if ($referrer !== null)
+        <div class="form-group">
+            <label for="referrer">Indicado Por</label>
+            <p class="form-control-static" id="referrer">{{ $referrer->username }}</p>
+        </div>
+    @else
         <div class="form-group{{ $errors->has('referred_by') ? ' has-error' : '' }}">
             <div class="input-group">
                 <span class="input-group-addon">
@@ -97,6 +107,7 @@
             </span>
         @endif
         </div>
+    @endif
 
         <div class="form-group inline-align">
             <div class="inline-align-left"></div>

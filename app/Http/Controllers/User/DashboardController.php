@@ -11,7 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('user.index');
+        return view('user.index')
+            ->with('user', \Auth::user());
     }
 
     public function profile()

@@ -34,7 +34,7 @@
                 <h5>Estatísticas do Usuário</h5>
 
                 <div class="buttons">
-                    <a href="#" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</a>
+                    <a href="{{ url('/register/' . $user->username) }}" class="btn btn-link">{{ url('/register/' . $user->username) }}</a>
                 </div>
             </div>
             <div class="widget-content">
