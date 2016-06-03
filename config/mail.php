@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'contato@globalbetbrasil.com', 'name' => 'Global Bet Brasil'],
 
     /*
     |--------------------------------------------------------------------------
