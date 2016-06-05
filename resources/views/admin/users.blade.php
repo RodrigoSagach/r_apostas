@@ -45,7 +45,7 @@
                         </thead>
                         <tbody>
                         @foreach ($users as $usr)
-                            <tr>
+                            <tr data-user="{{ $usr->toJson() }}" data-toggle="popover-data">
                                 <td>{{ $usr->id }}</td>
                                 <td>{{ $usr->username }}</td>
                                 <td>{{ $usr->name }}</td>
@@ -96,4 +96,22 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $('[data-toggle=popover-data]').popover({
+            container: 'body',
+            content: function () {
+                var data = $(this).data('user');
+
+                $ul = $('<ul/>').addClass('list-group');
+
+                $ul.append($('<li/>').addClass('list-group-item').html('<strong>Investimentos:</strong> $ ' + parseFloat(data.investments_amount).toFixed(2)));
+                $ul.append($('<li/>').addClass('list-group-item').html('<strong>Saldo:</strong> $ ' + parseFloat(data.balance).toFixed(2)));
+
+                return $ul;
+            },
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+        });
+    </script>
 @endsection

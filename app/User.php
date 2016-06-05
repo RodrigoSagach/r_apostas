@@ -27,6 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['investments_amount', 'balance'];
+
     public static function admin()
     {
         return self::whereHas('roles', function ($query) {
@@ -65,6 +72,16 @@ class User extends Authenticatable
     }
 
     public function getBalance()
+    {
+        return $this->earnings()->sum('amount') - $this->withdrawals()->sum('amount');
+    }
+
+    public function getInvestmentsAmountAttribute()
+    {
+        return $this->investments()->sum('amount');
+    }
+
+    public function getBalanceAttribute()
     {
         return $this->earnings()->sum('amount') - $this->withdrawals()->sum('amount');
     }
