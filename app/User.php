@@ -32,7 +32,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $appends = ['investments_amount', 'balance'];
+    protected $appends = ['investments_amount', 'balance', 'references', 'total_earnings'];
 
     public static function admin()
     {
@@ -84,5 +84,15 @@ class User extends Authenticatable
     public function getBalanceAttribute()
     {
         return $this->earnings()->sum('amount') - $this->withdrawals()->sum('amount');
+    }
+
+    public function getReferencesAttribute()
+    {
+        return self::where('referred_by', $this->username)->count();
+    }
+
+    public function getTotalEarningsAttribute()
+    {
+        return ($this->getInvestmentsAmountAttribute() * 0.18) * 26;
     }
 }

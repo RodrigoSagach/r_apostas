@@ -11,8 +11,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $user = \Auth::user();
+
+        $references = \App\User::where('referred_by', $user->username)->paginate(15);
+
         return view('user.index')
-            ->with('user', \Auth::user());
+            ->with('user', $user)
+            ->with('references', $references);
     }
 
     public function profile()
