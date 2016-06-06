@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Perfil - ')
+@section('title', 'Perfil')
 
 @section('breadcrumb')
     <a class="tip-bottom">Perfil</a>

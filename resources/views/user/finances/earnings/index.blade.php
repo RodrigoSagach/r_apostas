@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Ganhos - Global Bet Brasil')
+@section('title', 'Ganhos')
 
 @section('breadcrumb')
     <a href="{{ route('user.irequests.index') }}" class="tip-bottom"><i class="glyphicon glyphicon-usd"></i> Finanças</a>

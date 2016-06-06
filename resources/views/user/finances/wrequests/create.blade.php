@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Sacar - Global Bet Brasil')
+@section('title', 'Sacar')
 
 @section('content')
     <div class="row">

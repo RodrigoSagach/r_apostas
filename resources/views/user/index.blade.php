@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Painel - Global Bet Brasil')
+@section('title', 'Painel')
 
 @section('content')
     <div class="quick-actions_homepage">
