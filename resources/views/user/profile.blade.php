@@ -27,8 +27,21 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="referred_by">Referência</label>
+                                <p class="form-control-static">{{ $user->referred_by }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="email">E-Mail</label>
                                 <p class="form-control-static">{{ $user->email }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cpf">CPF (Comprovante Pessoa Física)</label>
+                                <p class="form-control-static">{{ $user->cpf }}</p>
                             </div>
                         </div>
 
@@ -40,8 +53,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="referred_by">Referência</label>
-                                <p class="form-control-static">{{ $user->referred_by }}</p>
+                                <label for="mobile">Celular</label>
+                                <input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="full_address">Endereço Completo</label>
+                                <input type="text" name="full_address" value="{{ $user->full_address }}" class="form-control">
                             </div>
                         </div>
 
